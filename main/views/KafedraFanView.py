@@ -1,7 +1,6 @@
-from rest_framework.generics import CreateAPIView, UpdateAPIView
+from rest_framework.generics import CreateAPIView, ListAPIView, RetrieveUpdateDestroyAPIView
 
 from main.models.KafedraFanModel import KafedraFanModel
-from main.models.KafedraModel import KafedraModel
 from main.serializers.KafedraFanSerializer import KafedraFanSerializer
 
 
@@ -10,8 +9,12 @@ class AddKafedraFanView(CreateAPIView):
     serializer_class = KafedraFanSerializer
 
 
-class KafedraUpdateView(UpdateAPIView):
-    queryset = KafedraModel.objects.all()
+class KafedraFanDelete(RetrieveUpdateDestroyAPIView):
+    queryset = KafedraFanModel.objects.all()
     serializer_class = KafedraFanSerializer
 
+
+class KafedraFanList(ListAPIView):
+    queryset = KafedraFanModel.objects.all()
+    serializer_class = KafedraFanSerializer
 

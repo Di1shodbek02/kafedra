@@ -2,7 +2,7 @@ from django.urls import path
 
 from main.views.FanQushimchaModel import AddFanQushimchaAPIView
 from main.views.FanView import AddFanAPIView, FanListAPIView, FanUpdateAPIView
-from main.views.KafedraFanView import AddKafedraFanView
+from main.views.KafedraFanView import AddKafedraFanView, KafedraFanDelete, KafedraFanList
 from main.views.KafedraView import AddKafedraAPIView, KafedraListAPIView, KafedraDetailAPIView, KafedraUpdateView
 from main.views.QushimchalarView import AddQushimchalarView
 from main.views.TarkibTuriView import TarkibTuriView
@@ -10,6 +10,8 @@ from main.views.TeacherView import TeacherAPIView, TeacherListAPIView, TeacherUp
 
 urlpatterns = [
     path('fan/<int:pk>/update', FanUpdateAPIView.as_view(), name='fan-update'),
+    path('kafedra-fan-list/', KafedraFanList.as_view(), name='kafedra-fan-list'),
+    path('delete-kafedra-fan/<int:pk>/', KafedraFanDelete.as_view(), name='kafedra-fan-delete'),
     path('kafedra/<int:pk>/update/', KafedraUpdateView.as_view(), name='kafedra-update'),
     path('teacher/<int:pk>/update/', TeacherUpdateAPIView.as_view(), name='teacher-update'),
     path('add-teacher/', TeacherAPIView.as_view(), name='add_teacher'),

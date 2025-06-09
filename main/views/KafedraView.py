@@ -29,7 +29,6 @@ class KafedraListAPIView(ListAPIView):
     serializer_class = KafedraSerializer
 
 
-
 class KafedraUpdateView(RetrieveUpdateDestroyAPIView):
     queryset = KafedraModel.objects.all()
     serializer_class = KafedraSerializer
