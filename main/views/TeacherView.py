@@ -1,6 +1,5 @@
-from rest_framework.generics import CreateAPIView, UpdateAPIView, ListAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.generics import CreateAPIView, ListAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.permissions import AllowAny
-from rest_framework.views import APIView
 
 from main.models.TeacherModel import TeacherModel
 from main.serializers.TeacherSerializer import TeacherSerializer

@@ -1,4 +1,4 @@
-from rest_framework.generics import CreateAPIView, RetrieveAPIView
+from rest_framework.generics import CreateAPIView
 
 from main.models.TarkibTuriModel import TarkibTuriModel
 from main.serializers.TarkibTuriSerialiser import TarkibTuriSerializer

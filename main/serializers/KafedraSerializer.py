@@ -1,7 +1,6 @@
 from rest_framework.serializers import ModelSerializer
 
 from main.models.FanModel import FanModel
-from main.models.KafedraFanModel import KafedraFanModel
 from main.models.KafedraModel import KafedraModel
 from main.models.TeacherModel import TeacherModel
 

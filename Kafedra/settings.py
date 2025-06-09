@@ -155,7 +155,7 @@ JAZZMIN_SETTINGS = {
 
     "topmenu_links": [
         {"name": "Kafedra", "url": "home", "permissions": ["auth.view_user"]},
-        {"model": "accounts.User"},
+        {"models": "accounts.User"},
     ],
 
     "show_sidebar": True,
