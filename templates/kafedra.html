@@ -1,0 +1,71 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Textarea } from "@/components/ui/textarea";
+
+export default function HomePage() {
+  return (
+    <div className="p-6 space-y-6">
+      {/* Homepage */}
+      <section className="space-y-4">
+        <h1 className="text-3xl font-bold">Ta'lim Boshqaruv Paneli</h1>
+        <p className="text-gray-600">Fanlar, kafedralar va mavzularni boshqarish</p>
+      </section>
+
+      {/* Tabs for Navigation */}
+      <Tabs defaultValue="kafedra">
+        <TabsList>
+          <TabsTrigger value="kafedra">Kafedralar</TabsTrigger>
+          <TabsTrigger value="fayl">Fayl yuklash</TabsTrigger>
+          <TabsTrigger value="sana">Sanani tanlash</TabsTrigger>
+        </TabsList>
+
+        {/* Kafedra page */}
+        <TabsContent value="kafedra">
+          <Card>
+            <CardContent className="space-y-4 pt-6">
+              <h2 className="text-xl font-semibold">Yangi Kafedra Qo'shish</h2>
+              <Input placeholder="Kafedra nomi" />
+              <Button>Saqlash</Button>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-6">
+            <CardContent className="pt-6">
+              <h3 className="text-lg font-medium mb-4">Mavjud Kafedralar</h3>
+              <ul className="space-y-2">
+                <li className="bg-gray-100 p-2 rounded">Kafedra 1</li>
+                <li className="bg-gray-100 p-2 rounded">Kafedra 2</li>
+              </ul>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        {/* Fayl yuklash */}
+        <TabsContent value="fayl">
+          <Card>
+            <CardContent className="pt-6 space-y-4">
+              <h2 className="text-xl font-semibold">Fayl yuklash</h2>
+              <Input type="file" />
+              <Textarea placeholder="Izoh (ixtiyoriy)" />
+              <Button>Yuklash</Button>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        {/* Sana kiritish */}
+        <TabsContent value="sana">
+          <Card>
+            <CardContent className="pt-6 space-y-4">
+              <h2 className="text-xl font-semibold">Sana kiritish</h2>
+              <Input type="date" />
+              <Button>Saqlash</Button>
+            </CardContent>
+          </Card>
+        </TabsContent>
+      </Tabs>
+    </div>
+  );
+}
